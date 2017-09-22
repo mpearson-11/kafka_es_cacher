@@ -3,6 +3,8 @@ defmodule KafkaTasker do
 
   def start(_type, _args) do
     import Supervisor.Spec
+    Stash.set(:kafka_keys, "keys", [])
+    Stash.set(:kafka, "init", 0)
 
     children = [
       supervisor(KafkaConsumer.Supervisor, []),

@@ -1,0 +1,4 @@
+<%= for item <- @data do %>
+  <h1><%= item.key %></h1>
+  <h3><%= item.data %></h1>
+<%= end %>
